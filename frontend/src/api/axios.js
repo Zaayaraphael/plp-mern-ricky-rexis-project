@@ -7,6 +7,7 @@ const api = axios.create({
     'Content-Type': 'application/json'
   }
 });
+const API_URL = "https://plp-mern-ricky-rexis-project-2.onrender.com"
 
 // Response interceptor for error handling
 api.interceptors.response.use(
