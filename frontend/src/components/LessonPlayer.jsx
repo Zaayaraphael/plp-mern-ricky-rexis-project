@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import api from '../api/axios';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/authContext';
 
 const LessonPlayer = ({ lesson, onComplete }) => {
   const { isAuthenticated } = useAuth();
