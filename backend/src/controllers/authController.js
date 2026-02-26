@@ -44,21 +44,23 @@ export const register = async (req, res) => {
       return res.status(400).json({ error: error.details[0].message });
     }
 
-    const { name, email, password } = req.body;
+    const { firstname, lastname, email, phone, password } = req.body;
 
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ error: 'User already exists' });
     }
 
-    const user = await User.create({ name, email, password });
+    const user = await User.create({ firstname, lastname, email, phone, password });
 
     generateToken(res, user._id);
 
     res.status(201).json({
       _id: user._id,
-      name: user.name,
+      firstname: user.firstname,
+      lastname: user.lastname,
       email: user.email,
+      phone: user.phone,
       role: user.role
     });
   } catch (error) {

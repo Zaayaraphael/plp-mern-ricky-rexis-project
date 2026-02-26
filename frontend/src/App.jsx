@@ -21,7 +21,8 @@ function App() {
           <Route path="/courses/:moduleId" element={<CourseDetail />} />
           <Route path="/lessons/:id" element={<LessonPage />} />
         </Routes>
-      </main>
+      </main> 
+      <Home />
       <Footer />
     </div>
   );

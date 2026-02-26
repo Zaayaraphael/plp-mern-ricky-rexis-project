@@ -14,16 +14,27 @@ const bookmarkSchema = new mongoose.Schema({
 }, { _id: false });
 
 const userSchema = new mongoose.Schema({
-  name: {
+  firstname: {
     type: String,
-    required: [true, 'Name is required'],
+    required: [true, 'First name is required'],
     trim: true
   },
+  lastname: {
+    type: String,
+    required: [true, 'Last name is required'],
+    trim: true
+  },
+ 
   email: {
     type: String,
     required: [true, 'Email is required'],
     unique: true,
     lowercase: true,
+    trim: true
+  },
+   phone: {
+    type: Number,
+    required: [true, 'Phone number is required'],
     trim: true
   },
   password: {
